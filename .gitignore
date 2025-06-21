@@ -1,8 +1,6 @@
 __pycache__/
 *.pyc
 *.pkl
-*.h5
-*.save
 .env
 .vscode/
 .idea/
