@@ -10,6 +10,10 @@ model = load_model("modelo_lstm_dis.h5")
 class PriceRequest(BaseModel):
     prices: list[float]  # lista com os últimos 60 preços normalizados
 
+@app.get("/")
+def read_root():
+    return {"message": "API LSTM funcionando. Use POST /predict para previsões."}
+
 @app.post("/predict")
 def predict_price(data: PriceRequest):
     if len(data.prices) != window_size:

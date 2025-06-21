@@ -13,9 +13,8 @@ COPY . /app
 # Instala as dependências
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Expõe a porta que será usada
+# Expõe a porta padrão do FastAPI (opcional, Railway ignora)
 EXPOSE 8000
 
-#Comando para iniciar a API
+# Comando para iniciar a API (usa PORT do Railway ou 8000 localmente)
 CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
-
