@@ -16,6 +16,6 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Expõe a porta que será usada
 EXPOSE 8000
 
-# Comando para iniciar a API
+#Comando para iniciar a API
 CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port ${PORT:-8000}"]
 
