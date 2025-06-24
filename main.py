@@ -4,7 +4,11 @@ import numpy as np
 from tensorflow.keras.models import load_model
 from utils import preprocess_input, scaler, window_size
 
-app = FastAPI()
+app = FastAPI(
+    title="API de Previsão de Preço com LSTM",
+    description="Esta API recebe os 60 últimos preços normalizados e retorna a previsão do próximo valor com uma rede neural LSTM treinada.",
+    version="1.0.0"
+)
 model = load_model("modelo_lstm_dis.h5")
 
 class PriceRequest(BaseModel):
