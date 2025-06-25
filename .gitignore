@@ -2,6 +2,7 @@ __pycache__/
 *.pyc
 *.pkl
 .env
+.gitignore
 .vscode/
 .idea/
 *.DS_Store
