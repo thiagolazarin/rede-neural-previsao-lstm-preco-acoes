@@ -3,6 +3,16 @@ from pydantic import BaseModel
 import numpy as np
 from tensorflow.keras.models import load_model
 from utils import preprocess_input, scaler, window_size
+from fastapi.middleware.cors import CORSMiddleware
+
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # ou especifique ["http://127.0.0.1:5500"] se quiser mais seguro
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 app = FastAPI(
     title="API de Previsão de Preço com LSTM",
