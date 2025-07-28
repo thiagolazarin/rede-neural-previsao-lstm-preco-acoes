@@ -1,10 +1,18 @@
 # 📈 Previsão de Preço com LSTM
 
-Este projeto disponibiliza uma API construída com **FastAPI** que utiliza uma rede neural **LSTM** treinada para prever o próximo preço com base nos últimos 60 valores fornecidos.
+Este projeto disponibiliza uma API construída com **FastAPI** que utiliza uma rede neural **LSTM** treinada para prever o próximo preço com base nos últimos 60 valores fornecidos. Também oferece uma interface web interativa que permite inserir os dados manualmente e visualizar a previsão diretamente pelo navegador.
 
 ---
 
-## 🚀 Como usar
+## 🌐 Acesse Agora
+
+Acesse a interface interativa do projeto:
+
+🔗 [https://rede-neural-previsao-lstm-preco-acoes-production-2e30.up.railway.app](https://rede-neural-previsao-lstm-preco-acoes-production-2e30.up.railway.app)
+
+---
+
+## 🚀 Como usar a API
 
 A API está disponível no seguinte endpoint:
 
@@ -45,12 +53,24 @@ POST https://rede-neural-previsao-lstm-preco-acoes-production-2e30.up.railway.ap
 
 ---
 
+## 📊 Métricas Utilizadas
+
+- **MAPE (Erro Percentual Absoluto Médio)**  
+  Indica o erro médio em **porcentagem** em relação ao valor real. Mostra o quão distante, em média, a previsão está do valor verdadeiro.
+
+- **MAE (Erro Médio Absoluto)**  
+  Mede o erro médio absoluto entre o valor real e o previsto. Quanto menor o MAE, maior a precisão.
+
+---
+
 ## 🛠 Tecnologias Utilizadas
 
 - [FastAPI](https://fastapi.tiangolo.com/)
 - [TensorFlow / Keras](https://www.tensorflow.org/)
-- [MinMaxScaler (scikit-learn)](https://scikit-learn.org/)
+- [scikit-learn (MinMaxScaler)](https://scikit-learn.org/)
 - [Postman](https://www.postman.com/)
+- [HTML + JS + CSS] (para o front-end)
+- [Railway](https://railway.app/) (deploy)
 
 ---
 
@@ -61,26 +81,40 @@ projeto_lstm_api/
 ├── main.py               # Arquivo principal da API FastAPI
 ├── modelo_lstm_dis.h5    # Modelo LSTM treinado
 ├── utils.py              # Funções auxiliares (ex: normalização)
-└── requirements.txt      # Dependências do projeto
+├── requirements.txt      # Dependências do projeto
+└── static/
+    └── index.html        # Interface web com formulário de preços
 ```
 
 ---
 
-## 📌 Observações
+## 🧪 Como testar localmente
 
-- A API está pronta para ser testada exclusivamente via Postman (sem front-end).
-- O modelo foi treinado com MinMaxScaler entre 0 e 1, mas o back-end trata a normalização internamente.
-- Se menos ou mais de 60 valores forem enviados, será retornado um erro `400`.
+1. Instale as dependências:
+```bash
+pip install -r requirements.txt
+```
+
+2. Execute a aplicação:
+```bash
+uvicorn main:app --reload
+```
+
+3. Acesse:
+- API: http://127.0.0.1:8000/predict
+- Front-end: http://127.0.0.1:8000
+
+---
+
+## 🐳 Como rodar com Docker
+
+```bash
+docker build -t lstm-api .
+docker run -d -p 8000:8000 lstm-api
+```
 
 ---
 
 ## 📫 Contato
 
-Caso tenha dúvidas ou sugestões, sinta-se à vontade para entrar em contato.
-
-
-## Como rodar com Docker
-
-```bash
-docker build -t lstm-api .
-docker run -d -p 8000:8000 lstm-api
+Caso tenha dúvidas ou sugestões, sinta-se à vontade para entrar em contato!
