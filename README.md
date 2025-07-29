@@ -53,13 +53,19 @@ POST https://rede-neural-previsao-lstm-preco-acoes-production-2e30.up.railway.ap
 
 ---
 
-## 📊 Métricas Utilizadas
+## 📊 Resultado do modelo
 
-- **MAPE (Erro Percentual Absoluto Médio)**  
-  Indica o erro médio em **porcentagem** em relação ao valor real. Mostra o quão distante, em média, a previsão está do valor verdadeiro.
+### Previsão vs Valor Real
 
-- **MAE (Erro Médio Absoluto)**  
-  Mede o erro médio absoluto entre o valor real e o previsto. Quanto menor o MAE, maior a precisão.
+![Previsão vs Valor Real](img-previsao.png)
+
+### Métricas de Avaliação
+
+- **MAE (Erro Médio Absoluto)**: 1.88  
+- **RMSE (Raiz do Erro Quadrático Médio)**: 2.75  
+- **MAPE (Erro Percentual Médio Absoluto)**: 1.86%
+
+> Essas métricas indicam que o modelo tem boa precisão, com um erro percentual médio inferior a 2%.
 
 ---
 
