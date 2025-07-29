@@ -47,7 +47,7 @@ POST https://rede-neural-previsao-lstm-preco-acoes-production-2e30.up.railway.ap
 
 ```json
 {
-  "previsao": 107.04
+  "previsao": 106.86
 }
 ```
 
